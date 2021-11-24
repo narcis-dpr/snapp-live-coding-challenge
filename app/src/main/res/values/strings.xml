@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SnappLiveCoding</string>
+    <string name="maskedEditTextDescription">The EditText should accept only numbers and show it with mask inside\ne.g) 4,500,000,000 Rls</string>
+    <string name="maskedEditTextHint">Enter your Budget Here...</string>
+    <string name="LekFragmentTitle">Leak Fragment</string>
+    <string name="leakActivityBtnLabel">Leak Activity</string>
+    <string name="maskedInputBtnLabel">Masked Input Activity</string>
+    <string name="rxJavaActivity">Rx Java Activity</string>
+    <string name="rxJavaActivitySampleResult">Sample Result:\nRide Id:xxx, Discount: yyy\nRide Id:zzz\nRide Id:www, Discount: qqq</string>
+</resources>
