@@ -7,4 +7,16 @@
     <string name="maskedInputBtnLabel">Masked Input Activity</string>
     <string name="rxJavaActivity">Rx Java Activity</string>
     <string name="rxJavaActivitySampleResult">Sample Result:\nRide Id:xxx, Discount: yyy\nRide Id:zzz\nRide Id:www, Discount: qqq</string>
+
+    <string name="snapp">اسنپ!</string>
+    <string name="box">اسنپ! باکس</string>
+    <string name="food">اسنپ! فود</string>
+    <string name="ticket">اسنپ! تیکت</string>
+    <string name="trip">اسنپ! تریپ</string>
+    <string name="market">اسنپ! مارکت</string>
+    <string name="doctor">اسنپ! دکتر</string>
+    <string name="shop">اسنپ! شاپ</string>
+    <string name="room">اسنپ! روم</string>
+    <string name="club">اسنپ! کلاب</string>
+
 </resources>
