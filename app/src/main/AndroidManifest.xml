@@ -25,6 +25,8 @@
 
         <activity android:name=".ui.leak.LeakActivity" />
 
+        <activity android:name=".ui.recyclerview.ServicesActivity"/>
+
     </application>
 
 </manifest>
