@@ -1,10 +1,10 @@
-package cab.snapp.livecoding.ui.rx
+package cab.snapp.livecoding.ui.coroutines
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import cab.snapp.livecoding.databinding.ActivityReactiveBinding
 
-class RxActivity : AppCompatActivity() {
+class CoroutinesActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +16,7 @@ class RxActivity : AppCompatActivity() {
 
 
         // implement your codes here
-        // use RxJava and probably its operators to implement your logic
+        // use Coroutines and kotlin Flow and probably their operators to implement your logic
         // you should get your data from "RideDataManager" class
         // you get both "rides" and "discounts" data and show them to the user
         // use a simple Text as a List which each item is separated by \n
