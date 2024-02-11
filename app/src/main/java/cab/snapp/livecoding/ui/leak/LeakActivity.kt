@@ -14,5 +14,7 @@ class LeakActivity : AppCompatActivity() {
                 .replace(R.id.container, LeakFragment.newInstance())
                 .commitNow()
         }
+        val str = String()
+        str.substring()
     }
 }

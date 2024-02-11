@@ -7,7 +7,6 @@ import io.reactivex.Observable
 import io.reactivex.functions.BiFunction
 import kotlinx.coroutines.flow.*
 import java.util.concurrent.TimeUnit
-import kotlin.time.Duration
 
 class RideDataManager {
 
@@ -18,7 +17,7 @@ class RideDataManager {
         Ride("10004", "driver_4", RideCategory.ROSE),
         Ride("10005", "driver_5", RideCategory.ECO),
         Ride("10006", "driver_5", RideCategory.TAXI),
-        Ride("10007", "driver_5", RideCategory.ECO)
+        Ride("10007", "driver_5", RideCategory.ECO),
     )
 
     private val rideDiscountData = listOf(
@@ -26,8 +25,8 @@ class RideDataManager {
         Discount("id_3", "sd34", RideCategory.ROSE),
     )
 
-    //returns all ride list completely as Observable
-    fun getRidesCompletely() : Observable<List<Ride>> {
+    // returns all ride list completely as Observable
+    fun getRidesCompletely(): Observable<List<Ride>> {
         return Observable.timer(5000, TimeUnit.MILLISECONDS)
             .flatMap {
                 Observable.create { emitter ->
@@ -39,22 +38,22 @@ class RideDataManager {
             }
     }
 
-    //returns ride list data item by item individually as Observable
+    // returns ride list data item by item individually as Observable
     fun getRidesIndividually(): Observable<Ride> {
         return Observable.fromIterable(rideData)
             .zipWith(
                 Observable.interval(
                     5,
                     1,
-                    TimeUnit.SECONDS
+                    TimeUnit.SECONDS,
                 ).take(rideData.size.toLong()),
                 BiFunction { item, time ->
                     return@BiFunction item
-                }
+                },
             )
     }
 
-    //returns all ride discount list completely as Observable
+    // returns all ride discount list completely as Observable
     fun getRideDiscountsCompletely(): Observable<List<Discount>> {
         return Observable.timer(2000, TimeUnit.MILLISECONDS)
             .flatMap {
@@ -67,45 +66,43 @@ class RideDataManager {
             }
     }
 
-    //returns ride discount list data item by item individually as Observable
+    // returns ride discount list data item by item individually as Observable
     fun getRideDiscountsIndividually(): Observable<Discount> {
         return Observable.fromIterable(rideDiscountData)
             .zipWith(
                 Observable.interval(
                     2,
                     1,
-                    TimeUnit.SECONDS
+                    TimeUnit.SECONDS,
                 ).take(rideDiscountData.size.toLong()),
                 BiFunction { item, time ->
                     return@BiFunction item
-                }
+                },
             )
     }
 
-
-
-    //returns all ride list completely as Flow
-    fun getRidesCompletelyAsFlow() : Flow<List<Ride>> {
+    // returns all ride list completely as Flow
+    fun getRidesCompletelyAsFlow(): Flow<List<Ride>> {
         return flow {
             kotlinx.coroutines.delay(5000)
             emit(rideData)
         }
     }
 
-    //returns ride list data item by item individually as Flow
+    // returns ride list data item by item individually as Flow
     fun getRidesIndividuallyAsFlow(): Flow<Ride> {
         return flow {
             kotlinx.coroutines.delay(5000)
             for (i in rideData.indices) {
                 emit(rideData[i])
-                if(i != rideData.size - 1) {
+                if (i != rideData.size - 1) {
                     kotlinx.coroutines.delay(1000)
                 }
             }
         }
     }
 
-    //returns all ride discount list completely as Flow
+    // returns all ride discount list completely as Flow
     fun getRideDiscountsCompletelyAsFlow(): Flow<List<Discount>> {
         return flow {
             kotlinx.coroutines.delay(2000)
@@ -113,13 +110,13 @@ class RideDataManager {
         }
     }
 
-    //returns ride discount list data item by item individually as Flow
+    // returns ride discount list data item by item individually as Flow
     fun getRideDiscountsIndividuallyAsFlow(): Flow<Discount> {
         return flow {
             kotlinx.coroutines.delay(2000)
             for (i in rideDiscountData.indices) {
                 emit(rideDiscountData[i])
-                if(i != rideDiscountData.size - 1) {
+                if (i != rideDiscountData.size - 1) {
                     kotlinx.coroutines.delay(1000)
                 }
             }
