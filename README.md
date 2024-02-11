@@ -13,3 +13,5 @@ a developer.
 
 Before starting your live coding interview, please clone, build and run the project. After a
 successful install, the live session will be started.
+
+## تسک لایو کدینگ کمپانی اسنپ برای پوزیشن سینیور اندروید دولوپر در تاریخ تابستان 1402
